@@ -1,0 +1,44 @@
+## Sistema síncrono
+
+- Uma tarefa é concluída após a outra
+- A tarefa anterior precisa ser concluída para então iniciar a próxima
+- Por padrão o Javascript é um sistema síncrono
+
+## Sistema assíncrono
+
+- Tarefas são executadas de maneira independente uma da outra
+- O Javascript pode usar assincronismo a seu favor
+
+## Callback
+
+Funções aceitam qualquer tipo de dado como argumento
+
+Pode-se passar uma função como argumento de outra função e executar a função do argumento dentro da função que a recebe como argumento
+
+Callback significa passar uma função como argumento para outra função e depois de realizar algumas tarefas a função passada como argumento é executada
+
+Callback executa depois de um certo tempo
+
+
+## setTimeout(function, delay)
+
+Executa uma  função callback após uma quantidade de milissegundos definidos
+
+
+## Promise
+
+Uma promessa de que algo acontecerá no futuro
+
+Promise é um objeto Javascript com a promessa de que algo será realizado
+
+É usado para operações assíncronas 
+
+- carregar um arquivo
+- Leitura de dados de uma API
+
+Uma Promise possui 4 estágios :
+
+- Pending ⇒ estado inicial, assim que o Obejto da promessa é iniciado
+- Fulfilled ⇒ quando a promessa foi concluída com sucesso
+- Rejected ⇒ quando a promessa foi rejeitada, quando ouve erro
+- Settled ⇒ Seja com sucesso ou com erro a Promise foi finalmente concluída
