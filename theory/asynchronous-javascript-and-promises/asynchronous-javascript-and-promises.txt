@@ -42,3 +42,9 @@ Uma Promise possui 4 estágios :
 - Fulfilled ⇒ quando a promessa foi concluída com sucesso
 - Rejected ⇒ quando a promessa foi rejeitada, quando ouve erro
 - Settled ⇒ Seja com sucesso ou com erro a Promise foi finalmente concluída
+
+## Promise all
+
+- Promise.all é uma maneira de executar promises em paralelo,
+- Uma promise é executada ao mesmo tempo que outra
+- Recebe um array de promises
