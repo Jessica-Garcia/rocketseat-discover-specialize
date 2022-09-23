@@ -1,0 +1,191 @@
+## React
+
+- É uma biblioteca Javascript para criar interfaces de usuário
+
+## Vite
+
+- É um boilerplate performático para a criação de  projetos React.
+
+### Criando o projeto
+
+- Abrir o terminal dentro da pasta onde será criado o projeto
+
+- No terminal digitar:
+
+    npm create vite@latest nome-do-projeto --template react
+
+
+### Executando o projeto
+
+- Abrir terminal dentro da pasta do projeto e digitar
+
+    npm install
+
+
+- Após a instalação das dependências, rodar o comando
+
+    npm run dev
+
+
+- Abrir o projeto no navegador
+
+## Estrutura React
+
+- Um arquivo index.html com uma estrutura HTML básica , uma div com id root e a importação do arquivo de scripts
+- O arquivo de scripts se encontra dentro da pasta src
+- Nesse arquivo é renderizado um componente chamado <App/>, e o conteúdo do desse componente é inserido dentro da div root do arquivo HTML
+- Dentro do componente <App/> fica inserido todo o conteúdo que é exibido em tela
+
+## JSX
+
+- Os arquivos App.jsx e o main.jsx usam a extensão jsx que é uma extensão usada pelo React para que se possa criar as interfaces de forma declarativa
+- O arquivo jsx possui uma estrutura composta por uma função que retorna um conteúdo HTML
+- O jsx também permite trabalhar com a importação e a utilização dos componentes que são criados, e esses componentes usam a estrutura de tags semelhante as tags do HTML
+
+## Estrutura de pastas e arquivos
+
+- node_modules - A pasta onde ficam todas dependências e módulos do nosso projeto.
+- src - Pasta principal onde ficará todos os nossos arquivos.
+- App.css - Arquivo de estilização do App.jsx
+- App.jsx - Página inicial do nosso projeto que será exibida no navegador.
+- favicon.svg - Ícone de favorito da página.
+- index.css - Arquivo de estilização global
+- logo.svg - Arquivo de imagem da logo do ReactJS.
+- main.jsx - Arquivo responsável por inicializar nossa aplicação.
+- index.html - Arquivo HTML onde será injetado todo o JavaScript que for compilado para ser exibido no navegador.
+- .gitignore - Esse arquivo descreve quais arquivos e pasta não devem subir para o Github.
+- package.json - Arquivo responsável pelas dependências do nosso projeto. Contém informações do pacote, como: scripts, dependências, número de versão e etc...
+- package-lock.json - Parecido com o package.json, esse arquivo descreve as características das dependências do projeto como versão, integridade dos links e muito mais.
+- vite.config.js - Arquivo de configuração do Vite.
+
+## Fragment
+
+Elementos jsx deve retornar apenas um elemento, 
+para isso é usado o fragment que é a abertura e fechamento de tags vazias ‘<></>’ 
+essas tags “embrulham” os demais elementos HTML que devem compor o arquivo jsx da página em questão.
+
+Pode-se também usar uma <div></div> para “embrulhar ” os elementos ou 
+qualquer outra tag que faça sentido para poder ter um retorno correto dos elementos.
+
+
+## Importando arquivos CSS
+
+É muito comum criar um arquivo CSS global na aplicação para, por exemplo, fazer resets
+
+Dentro da pasta src criar uma pasta styles
+
+dentro da pasta styles criar um arquivo global.css
+
+Nesse arquivo pode-se resetar algumas informações da tela como padding, margin, box-sizing
+
+No entanto, para que as alterações do arquivo CSS global seja aplicado é preciso importa-lo no arquivo main.jsx
+
+A importação desse arquivo dentro do main.jsx tem a seguinte sintaxe
+
+    import ‘caminho-do-arquivo.css’;
+
+
+No caso de arquivos css é necessário colocar a extensão css no final do nome do arquivo, 
+diferentemente dos arquivos jsx que são importados sem a extensão jsx
+
+Como foi feita a importação do arquivo global.css no arquivo main.jsx que é o arquivo principal que renderiza as páginas, 
+então a estilização do arquivo global será aplicada em todas as páginas
+
+
+## Separando css
+
+É recomendável que dentro da pasta src crie-se uma pasta pages para as páginas da aplicação,
+
+E dentro da pasta pages criar uma pasta com o nome da página que se quer criar, por exemplo Home
+
+Dentro dessa pasta cria-se então o arquivo index.jsx e também um arquivo style.css que vai estilizar o arquivo da página home.
+
+e para aplicar esses estilos à página basta importar o arquivo css no arquivo index.jsx
+
+## Estilizando a página
+
+Para aplicar uma classe em um elemento usa-se a a sintaxe className=’nome-da-classe’ dentro da tag na qual deseja-se aplicar essa classe
+
+
+## Propriedades
+
+as propriedades tornam os componentes dinâmicos
+
+No arquivo jsx da página que está usando o componente, adiciona-se as propriedades  no componente, 
+como por exemplo
+
+<Componente nome-da-propriedade={valor da propriedade}/>
+
+    <Card name="Janis" time="10:55:25" idade={27}/>
+    <Card name="Keith" time="11:15:55" idade={100}/>
+
+
+No entanto para a propriedade funcionar, dentro do arquivo jsx do componente é necessário passar a propriedade 
+props como argumento da função que retorna os elementos do componente
+e também é necessário colocar entre chaves  {props.nome-da-propriedade} 
+onde deseja-se que a propriedade apareça, como por exemplo:
+
+export function Card(props) {
+    return (
+        <div className='card'>
+            <strong>{props.name}</strong>
+            <small>{props.time}</small>
+        </div>
+
+    );
+}
+
+## Imutabilidade
+
+O conceito de Imutabilidade diz que o conteúdo de um estado 
+não deve ser alterado e sim substituído, 
+visto que isso é mais performático.
+
+
+## Key Prop
+
+Quando gera-se vários componentes de maneira dinâmica em uma 
+estrutura de repetição é preciso acrescentar uma propriedade key,
+para as listagens ficarem mais performáticas, 
+essa key precisa ser única.
+
+
+## Hooks
+
+useState e useEfect são hooks, que são funções que permitem conectar os recursos de estado 
+e ciclo de vida do react a partir de componentes totalmente funcionais. 
+
+A nomenclatura dos hooks segue um padrão, com prefixo use + NomeDoHook.
+
+
+## UseEffect
+
+Para começar a usar o useEffect deve-se primeiramente importá-lo do react
+
+    import React, {useState, useEffect} from 'react';
+
+O useEffect é escrito a cima do return da página
+
+O useEffect é composto por uma arrow function a qual será o corpo 
+do useEffect e armazenará todas os comandos que deverão ser 
+executados quando o useEffect for chamado. também compõe 
+o useEffect, um array de estados separado da arrow function 
+por uma virgula, esse array serve para armazenar os estados 
+dos quais a execução do useEffect depende.
+
+O useEffect é executado automaticamente assim que a interface 
+e os componentes são renderizados.
+
+Quando o array de estados está vazio, significa que o 
+useEffect vai executar uma única vez, quando a interface 
+e os componentes forem renderizados.
+
+Caso haja estados no array que compõe o useEffect, 
+este será executado também toda vez que os estados 
+desse array forem atualizados.
+
+Estrutura do UseEffect
+
+    useEffect(() => {
+        console.log('useEffect executou!')
+    }, [studentsList]);
